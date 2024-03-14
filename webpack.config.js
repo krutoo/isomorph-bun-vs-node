@@ -1,4 +1,6 @@
 import path from 'node:path';
+import webpack from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
 
 /** @type {import('webpack').Configuration} */
 export default {
@@ -39,6 +41,19 @@ export default {
           },
         },
       },
+    ],
+  },
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: '// @bun',
+      raw: true,
+    }),
+  ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
     ],
   },
   experiments: {

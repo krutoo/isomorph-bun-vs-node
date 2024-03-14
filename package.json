@@ -7,7 +7,7 @@
     "dev:node": "NODE_ENV=production node --watch --no-warnings=ExperimentalWarning --loader=ts-node/esm --env-file=.env.production src/index.ts",
     "dev:bun": "NODE_ENV=development bun --watch src/index.ts",
     "dev": "rspack --watch",
-    "build": "rm -rf dist && webpack && node scripts/post-build.mjs",
+    "build": "rm -rf dist && webpack",
     "type-check": "tsc -p . --noEmit"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
     "swc-loader": "^0.2.6",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "webpack": "^5.90.3",
