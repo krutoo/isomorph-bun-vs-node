@@ -30,8 +30,8 @@ function* main(deps: SagaDeps) {
 }
 
 function* fetchData(deps: SagaDeps) {
-  yield* put(UserSlice.actions.request());
-  yield* take([UserSlice.actions.success, UserSlice.actions.failure]);
+  // yield* put(UserSlice.actions.request());
+  // yield* take([UserSlice.actions.success, UserSlice.actions.failure]);
 
   yield* put(PostsSlice.actions.request());
   yield* take([PostsSlice.actions.success, PostsSlice.actions.failure]);
