@@ -6,6 +6,7 @@ import type express from 'express';
 import type { AuthorApi } from './entities/author';
 import type { PostApi } from './entities/post';
 import type { ServerHandler } from '@sima-land/isomorph/preset/server';
+import { UserApi } from './entities/user';
 
 export const TOKEN = {
   // tokens of common purpose components
@@ -18,6 +19,9 @@ export const TOKEN = {
     },
     Post: {
       api: createToken<PostApi>('post/api'),
+    },
+    Offers: {
+      api: createToken<UserApi>('offers/api'),
     },
   },
   Pages: {
