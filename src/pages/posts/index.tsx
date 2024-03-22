@@ -16,10 +16,8 @@ import { RegularHelmet } from '@sima-land/isomorph/preset/server';
 export function PostsPageApp() {
   const app = createApplication();
 
-  // используем пресет "PresetHandler"
   app.preset(
     PresetBunHandler(({ override }) => {
-      // переопределяем провайдеры пресета
       override(TOKEN.Lib.Http.Handler.Page.render, provideRender);
       override(TOKEN.Lib.Http.Handler.Page.helmet, () => RegularHelmet);
       override(TOKEN.Lib.Http.Handler.Page.assets, () => ({
@@ -29,7 +27,6 @@ export function PostsPageApp() {
     }),
   );
 
-  // добавляем в приложение собственные компоненты
   app.bind(TOKEN.Entities.Post.api).toProvider(providePostApi);
   app.bind(TOKEN.Entities.Offers.api).toProvider(provideUserApi);
   app.bind(TOKEN.Entities.Author.api).toProvider(provideAuthorApi);

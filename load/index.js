@@ -1,6 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
-/* eslint-disable require-jsdoc */
-/* eslint-disable import/no-anonymous-default-export */
 import http from 'k6/http';
 import { check } from 'k6';
 
