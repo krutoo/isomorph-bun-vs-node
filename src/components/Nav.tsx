@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Tabs, Tab } from '@sima-land/ui-nucleons/tabs';
 
 const items = [
   {
@@ -17,13 +17,14 @@ const items = [
 
 export function Nav() {
   return (
-    <nav>
+    <Tabs>
       {items.map((item, index) => (
-        <Fragment key={index}>
-          <a href={item.href}>{item.name}</a>
-          {index < items.length - 1 ? ' • ' : null}
-        </Fragment>
+        <Tab key={index}>
+          <a href={item.href} style={{ font: 'inherit', textDecoration: 'none', color: 'inherit' }}>
+            {item.name}
+          </a>
+        </Tab>
       ))}
-    </nav>
+    </Tabs>
   );
 }
